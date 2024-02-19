@@ -3,8 +3,6 @@ package granprix.pkg5ainf.gruppon.pkg6;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 public class Scrittore implements Runnable{
     public String file;
     public String username;
