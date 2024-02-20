@@ -4,6 +4,7 @@
  */
 package granprix.pkg5ainf.gruppon.pkg6;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -18,8 +19,6 @@ public class GranPrix5AINFGruppon6 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner scanner = new Scanner(System.in);
-
-
 
         System.out.print("Inserisci l'username: ");
         String username = scanner.nextLine();
@@ -55,26 +54,37 @@ public class GranPrix5AINFGruppon6 {
             System.out.println("Modifica Apportata");
         }
 
+        Circuito circuito0 = new Circuito("7km","Mugello(Italia)");
+        Circuito circuito1 = new Circuito("9km","Lusail International Circuit(Qatar)");
+        Circuito circuito2 = new Circuito("5km","Interlagos(Brasile)");
 
         System.out.println("Scegli il Circuito:");
-        System.out.println("-Italia\n-Qatar\n-Brasile");
+        System.out.println("-Mugello(Italia)\n-Lusail International Circuit(Qatar)\n-Interlagos(Brasile)");
         String Circuito = scanner.nextLine();
 
         System.out.println("Con quante macchine vuoi gareggiare?");
         int Nauto = scanner.nextInt();
 
+        Auto[] autoanonime = new Auto[20];
+
         for (int i = 0; i < Nauto; i++) {
             Auto auto = new Auto("Auto " + i, "Anonimo");
+            autoanonime[i] = new Auto("Auto " + i, "Anonimo");
         }
+
+        System.out.println("Signor " + username + " la macchina da te scelta è la " + Auto + ", gareggerai nel " + Circuito);
 
         Scrittore scrittore = new Scrittore("src/granprix/pkg5ainf/gruppon/pkg6/Dati.csv", username, password);
         Thread threadScrittore = new Thread(scrittore);
         threadScrittore.start();
 
-        Circuito circuito0 = new Circuito("7km","Italia");
-        Circuito circuito1 = new Circuito("9km","Qatar");
-        Circuito circuito2 = new Circuito("5km","Brasile");
-
+        DirettoreGara direttore = new DirettoreGara();
+        direttore.start();
+        try {
+            direttore.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

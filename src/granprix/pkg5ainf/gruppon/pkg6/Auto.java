@@ -1,6 +1,6 @@
 package granprix.pkg5ainf.gruppon.pkg6;
 
-public class Auto {
+public class Auto extends Thread{
     String marca;
     String pilota;
 
@@ -9,4 +9,8 @@ public class Auto {
         this.pilota = pilota;
     }
 
+    @Override
+    public void run(){
+
+    }
 }
