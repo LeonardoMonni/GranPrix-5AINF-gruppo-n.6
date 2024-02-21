@@ -30,7 +30,7 @@ public class GranPrix5AINFGruppon6 {
         Auto auto1 = new Auto("Mercedes", "Monni");
         Auto auto2 = new Auto("RedBull", "Draoui");
 
-        System.out.println("Scegli l'Auto:");
+        System.out.println("Scegli l'Auto: (utilizza la maiuscola)");
         System.out.println("-Ferrari\n-Mercedes\n-RedBull");
         String Auto = scanner.nextLine();
         switch (Auto) {
@@ -84,6 +84,14 @@ public class GranPrix5AINFGruppon6 {
             direttore.join();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
+        }
+        for (int i = 0; i < Nauto; i++){
+            autoanonime[i].start();
+            try {
+                autoanonime[i].join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
