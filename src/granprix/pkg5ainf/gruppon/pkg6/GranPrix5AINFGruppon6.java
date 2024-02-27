@@ -15,6 +15,7 @@ public class GranPrix5AINFGruppon6 {
     
     /**
      * @param args the command line arguments
+     *
      */
     public static void main(String[] args) {
         // TODO code application logic here
@@ -54,9 +55,10 @@ public class GranPrix5AINFGruppon6 {
             System.out.println("Modifica Apportata");
         }
 
-        Circuito circuito0 = new Circuito("7km","Mugello(Italia)");
-        Circuito circuito1 = new Circuito("9km","Lusail International Circuit(Qatar)");
-        Circuito circuito2 = new Circuito("5km","Interlagos(Brasile)");
+        Circuito circuito0 = new Circuito("7","Mugello(Italia)");
+
+        Circuito circuito1 = new Circuito("9","Lusail International Circuit(Qatar)");
+        Circuito circuito2 = new Circuito("5","Interlagos(Brasile)");
 
         System.out.println("Scegli il Circuito:");
         System.out.println("-Mugello(Italia)\n-Lusail International Circuit(Qatar)\n-Interlagos(Brasile)");
@@ -93,6 +95,7 @@ public class GranPrix5AINFGruppon6 {
                 throw new RuntimeException(e);
             }
         }
+
     }
 
 }
