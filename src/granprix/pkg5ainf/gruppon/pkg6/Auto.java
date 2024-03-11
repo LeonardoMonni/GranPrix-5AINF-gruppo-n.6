@@ -29,6 +29,7 @@ public class Auto extends Thread{
         serviranno:
         - metodo random
         - stabilire il traguardo: lunghezza circuito
+
          */
 
 
